@@ -9,73 +9,76 @@ using namespace std;
 CGen::CGen (const string &outputFile)
 {
 	m_FS.open (outputFile);
-	vector<string> tmp;
 
-	tmp.push_back ("Intel I3-5100U");
-	tmp.push_back ("Intel I3-5200U");
-	tmp.push_back ("Intel I5-5200U");
-	tmp.push_back ("Intel I5-5500U");
-	tmp.push_back ("Intel I7-5200U");
-	tmp.push_back ("Intel I7-5500U");
-	tmp.push_back ("Intel I3-6100U");
-	tmp.push_back ("Intel I3-6200U");
-	tmp.push_back ("Intel I5-6200U");
-	tmp.push_back ("Intel I5-6500U");
-	tmp.push_back ("Intel I7-6200U");
-	tmp.push_back ("Intel I7-6500U");
-	tmp.push_back ("Intel I3-7100U");
-	tmp.push_back ("Intel I3-7200U");
-	tmp.push_back ("Intel I5-7200U");
-	tmp.push_back ("Intel I5-7500U");
-	tmp.push_back ("Intel I7-7200U");
-	tmp.push_back ("Intel I7-7500U");
-	m_MetaData.insert (pair < string, vector<string>> ("CPU", tmp));
+	vector<pair<string, double>> tmp;
 
-	tmp.clear ();
-	tmp.push_back ("2 GB");
-	tmp.push_back ("3 GB");
-	tmp.push_back ("4 GB");
-	tmp.push_back ("6 GB");
-	tmp.push_back ("8 GB");
-	tmp.push_back ("12 GB");
-	tmp.push_back ("16 GB");
-	tmp.push_back ("24 GB");
-	tmp.push_back ("32 GB");
-	m_MetaData.insert (pair < string, vector<string>> ("RAM", tmp));
+	tmp.push_back (pair<string, double> ("Intel I3-5100U", 2000.0));
+	tmp.push_back (pair<string, double> ("Intel I3-5200U", 2500.0));
+	tmp.push_back (pair<string, double> ("Intel I5-5200U", 3000.0));
+	tmp.push_back (pair<string, double> ("Intel I5-5500U", 3500.0));
+	tmp.push_back (pair<string, double> ("Intel I7-5200U", 4000.0));
+	tmp.push_back (pair<string, double> ("Intel I7-5500U", 4500.0));
+
+	tmp.push_back (pair<string, double> ("Intel I3-6100U", 2250.0));
+	tmp.push_back (pair<string, double> ("Intel I3-6200U", 2750.0));
+	tmp.push_back (pair<string, double> ("Intel I5-6200U", 3250.0));
+	tmp.push_back (pair<string, double> ("Intel I5-6500U", 3750.0));
+	tmp.push_back (pair<string, double> ("Intel I7-6200U", 4250.0));
+	tmp.push_back (pair<string, double> ("Intel I7-6500U", 4750.0));
+
+	tmp.push_back (pair<string, double> ("Intel I3-7100U", 2500.0));
+	tmp.push_back (pair<string, double> ("Intel I3-7200U", 3000.0));
+	tmp.push_back (pair<string, double> ("Intel I5-7200U", 3500.0));
+	tmp.push_back (pair<string, double> ("Intel I5-7500U", 4000.0));
+	tmp.push_back (pair<string, double> ("Intel I7-7200U", 4500.0));
+	tmp.push_back (pair<string, double> ("Intel I7-7500U", 5000.0));
+	m_MetaData.insert (pair < string, vector<pair<string, double>>> ("CPU", tmp));
 
 	tmp.clear ();
-	tmp.push_back ("320 GB HDD");
-	tmp.push_back ("500 GB HDD");
-	tmp.push_back ("750 GB HDD");
-	tmp.push_back ("1 000 GB HDD");
-	tmp.push_back ("128 GB SSD");
-	tmp.push_back ("240 GB SSD");
-	tmp.push_back ("256 GB SSD");
-	tmp.push_back ("320 GB SSD");
-	tmp.push_back ("512 GB SSD");
-	m_MetaData.insert (pair < string, vector<string>> ("HDD", tmp));
+	tmp.push_back (pair<string, double> ("2", 300.0));
+	tmp.push_back (pair<string, double> ("3", 500.0));
+	tmp.push_back (pair<string, double> ("4", 700.0));
+	tmp.push_back (pair<string, double> ("6", 1000.0));
+	tmp.push_back (pair<string, double> ("8", 1300.0));
+	tmp.push_back (pair<string, double> ("12", 1700.0));
+	tmp.push_back (pair<string, double> ("16", 2000.0));
+	tmp.push_back (pair<string, double> ("24", 3000.0));
+	tmp.push_back (pair<string, double> ("32", 3500.0));
+	m_MetaData.insert (pair < string, vector<pair<string, double>>> ("RAM", tmp));
 
 	tmp.clear ();
-	tmp.push_back ("10\"");
-	tmp.push_back ("11\"");
-	tmp.push_back ("12\"");
-	tmp.push_back ("13\"");
-	tmp.push_back ("13,3\"");
-	tmp.push_back ("14\"");
-	tmp.push_back ("15,6\"");
-	tmp.push_back ("17,3\"");
-	m_MetaData.insert (pair < string, vector<string>> ("Display size", tmp));
+	tmp.push_back (pair<string, double> ("320 GB HDD", 400.0));
+	tmp.push_back (pair<string, double> ("500 GB HDD", 500.0));
+	tmp.push_back (pair<string, double> ("750 GB HDD", 750.0));
+	tmp.push_back (pair<string, double> ("1 000 GB HDD", 1000.0));
+	tmp.push_back (pair<string, double> ("128 GB SSD", 1000.0));
+	tmp.push_back (pair<string, double> ("240 GB SSD", 2000.0));
+	tmp.push_back (pair<string, double> ("256 GB SSD", 2300.0));
+	tmp.push_back (pair<string, double> ("320 GB SSD", 3500.0));
+	tmp.push_back (pair<string, double> ("512 GB SSD", 6000.0));
+	m_MetaData.insert (pair < string, vector<pair<string, double>>> ("HDD", tmp));
 
 	tmp.clear ();
-	tmp.push_back ("1280x800");
-	tmp.push_back ("1366x768");
-	tmp.push_back ("1600x900");
-	tmp.push_back ("1680x1050");
-	tmp.push_back ("1920x1080");
-	tmp.push_back ("2560x1440");
-	tmp.push_back ("2880x1800");
-	tmp.push_back ("3840x2160");
-	m_MetaData.insert (pair < string, vector<string>> ("Display resolution", tmp));
+	tmp.push_back (pair<string, double> ("10", 5000.0));
+	tmp.push_back (pair<string, double> ("11", 5000.0));
+	tmp.push_back (pair<string, double> ("12", 5000.0));
+	tmp.push_back (pair<string, double> ("13", 5000.0));
+	tmp.push_back (pair<string, double> ("13.3", 5500.0));
+	tmp.push_back (pair<string, double> ("14", 6000.0));
+	tmp.push_back (pair<string, double> ("15.6", 7000.0));
+	tmp.push_back (pair<string, double> ("17.3", 8000.0));
+	m_MetaData.insert (pair < string, vector<pair<string, double>>> ("Display size", tmp));
+
+	tmp.clear ();
+	tmp.push_back (pair<string, double> ("1280x800", 5000.0));
+	tmp.push_back (pair<string, double> ("1366x768", 5500.0));
+	tmp.push_back (pair<string, double> ("1600x900", 5700.0));
+	tmp.push_back (pair<string, double> ("1680x1050", 6000.0));
+	tmp.push_back (pair<string, double> ("1920x1080", 7000.0));
+	tmp.push_back (pair<string, double> ("2560x1440", 7500.0));
+	tmp.push_back (pair<string, double> ("2880x1800", 8500.0));
+	tmp.push_back (pair<string, double> ("3840x2160", 10000.0));
+	m_MetaData.insert (pair < string, vector<pair<string, double>>> ("Display resolution", tmp));
 }
 
 CGen::~CGen (void)
@@ -86,26 +89,47 @@ CGen::~CGen (void)
 
 void CGen::generateRecords (uint32_t recordsCount)
 {
+	m_FS << "CPU,RAM,HDD,Velikost displeje,Rozliseni displeje,Cena" << endl;
+
 	for (uint32_t i = 0; i < recordsCount; i++)
 		writeRecordIntoOutputFile (generateOneRecord ());
 }
 
 CRecord CGen::generateOneRecord (void)
 {
-	vector<string> tmp = m_MetaData.find ("CPU")->second;
-	string cpu = tmp [rand () % tmp.size ()];
+	//map<string, vector<pair<string, double>>> m_MetaData;
+	double price = 0.0;
+	int randomIndex;
+	vector<pair<string, double>> tmp;
+
+	tmp = m_MetaData.find ("CPU")->second;
+	randomIndex = rand () % tmp.size ();
+	string cpu = tmp [randomIndex].first;
+	price += tmp [randomIndex].second;
+
 	tmp = m_MetaData.find ("RAM")->second;
-	string ram = tmp [rand () % tmp.size ()];
+	randomIndex = rand () % tmp.size ();
+	string ram = tmp [randomIndex].first;
+	price += tmp [randomIndex].second;
+
 	tmp = m_MetaData.find ("HDD")->second;
-	string hdd = tmp [rand () % tmp.size ()];
+	randomIndex = rand () % tmp.size ();
+	string hdd = tmp [randomIndex].first;
+	price += tmp [randomIndex].second;
+
 	tmp = m_MetaData.find ("Display size")->second;
-	string displaySize = tmp [rand () % tmp.size ()];
+	randomIndex = rand () % tmp.size ();
+	string displaySize = tmp [randomIndex].first;
+	price += tmp [randomIndex].second;
+
 	tmp = m_MetaData.find ("Display resolution")->second;
-	string displayResolution = tmp [rand () % tmp.size ()];
+	randomIndex = rand () % tmp.size ();
+	string displayResolution = tmp [randomIndex].first;
+	price += tmp [randomIndex].second;
 
-	string delimither = ";";
+	price += (rand () % (int) price/4) + price/2;
 
-	return CRecord (cpu, ram, hdd, displaySize, displayResolution, delimither);
+	return CRecord (cpu, ram, hdd, displaySize, displayResolution, price, ",");
 }
 
 void CGen::writeRecordIntoOutputFile (const CRecord &record)

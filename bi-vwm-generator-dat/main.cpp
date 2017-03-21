@@ -1,6 +1,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 #include "Gen.h"
@@ -20,6 +21,6 @@ int main (void)
 
 	cout << "Complete!" << endl;
 
-	system ("pause");
+	// system ("pause");
 	return 0;
 }

@@ -13,6 +13,7 @@ public:
 					 const string &hdd,
 					 const string &displaySize,
 					 const string &displayResolution,
+					 double price,
 					 const string &delimither);
 	~CRecord (void);
 	
@@ -22,6 +23,8 @@ private:
 	string m_HDD;
 	string m_DispalySize;
 	string m_DispalyResolution;
+	double m_Price;
+
 	string m_Delimither;
 
 	friend ostream &operator<< (ostream &os, const CRecord &record);

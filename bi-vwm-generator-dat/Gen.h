@@ -19,7 +19,7 @@ public:
 private:
 	ofstream m_FS;
 	FILE *m_OutputFile;
-	map<string, vector<string>> m_MetaData;
+	map<string, vector<pair<string, double>>> m_MetaData;
 
 	CRecord generateOneRecord (void);
 	void writeRecordIntoOutputFile (const CRecord &record);
