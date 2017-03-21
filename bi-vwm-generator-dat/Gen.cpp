@@ -11,9 +11,24 @@ CGen::CGen (const string &outputFile)
 	m_FS.open (outputFile);
 	vector<string> tmp;
 
-	tmp.push_back ("I3");
-	tmp.push_back ("I5");
-	tmp.push_back ("I7");
+	tmp.push_back ("Intel I3-5100U");
+	tmp.push_back ("Intel I3-5200U");
+	tmp.push_back ("Intel I5-5200U");
+	tmp.push_back ("Intel I5-5500U");
+	tmp.push_back ("Intel I7-5200U");
+	tmp.push_back ("Intel I7-5500U");
+	tmp.push_back ("Intel I3-6100U");
+	tmp.push_back ("Intel I3-6200U");
+	tmp.push_back ("Intel I5-6200U");
+	tmp.push_back ("Intel I5-6500U");
+	tmp.push_back ("Intel I7-6200U");
+	tmp.push_back ("Intel I7-6500U");
+	tmp.push_back ("Intel I3-7100U");
+	tmp.push_back ("Intel I3-7200U");
+	tmp.push_back ("Intel I5-7200U");
+	tmp.push_back ("Intel I5-7500U");
+	tmp.push_back ("Intel I7-7200U");
+	tmp.push_back ("Intel I7-7500U");
 	m_MetaData.insert (pair < string, vector<string>> ("CPU", tmp));
 
 	tmp.clear ();

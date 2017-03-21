@@ -25,3 +25,4 @@ private:
 	void writeRecordIntoOutputFile (const CRecord &record);
 };
 
+

@@ -12,14 +12,14 @@ int main (void)
 	cout << "How many records do you want to generate?" << endl;
 	cin >> recordsCount;
 
-	string outPutFileName = "C:/Users/Deny/Desktop/data.txt";
+	string outPutFileName = "C:/Users/Deny/Desktop/bi-vwm-random-data.csv";
 
 	CGen generator (outPutFileName);
 
 	generator.generateRecords (recordsCount);
 
 	cout << "Complete!" << endl;
-	// Windows :)
+
 	system ("pause");
 	return 0;
 }
